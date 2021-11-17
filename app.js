@@ -13,13 +13,6 @@ var pool  = mysql.createPool({
   
   module.exports = pool;
 
-connection.connect((err) => {
-    if (err) {
-      console.log('error connecting: ' + err.stack);
-      return;
-    }
-    console.log('success');
-  });
 
   app.use(express.static('public'));
   app.use(express.urlencoded({extended:false}));
