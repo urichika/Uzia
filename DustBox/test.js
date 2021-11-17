@@ -1,15 +1,15 @@
 const express = require('express');
 const mysql = require('mysql');
-
 const app = express();
 app.use(express.static('public')); //ワンちゃんこの文いらない
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'Soccer0014',
-  database: 'webapp'
-});
+var connection = mysql.createConnection({
+    host: 'us-cdbr-east-04.cleardb.com',
+    user: 'b431019deb93b8',
+    password: '3ecab8a6',
+    database: 'heroku_67ebfde3e758845'
+  });
+  
 
 connection.connect((err) => {
     if (err) {
@@ -19,7 +19,6 @@ connection.connect((err) => {
     console.log('success');
   });
 
-  app.use(express.static('public'));
   app.use(express.urlencoded({extended:false}));
 
 
