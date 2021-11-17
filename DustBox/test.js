@@ -5,10 +5,10 @@ const app = express();
 app.use(express.static('public')); //ワンちゃんこの文いらない
 
 const connection = mysql.createConnection({
-  host: 'us-cdbr-east-04.cleardb.com',
-  user: 'b431019deb93b8',
-  password: '3ecab8a6',
-  database: 'heroku_67ebfde3e758845'
+  host: 'localhost',
+  user: 'root',
+  password: 'Soccer0014',
+  database: 'webapp'
 });
 
 connection.connect((err) => {
@@ -121,4 +121,4 @@ app.get('/access', (req, res) => {
     res.render('access.ejs');
 });
 
-app.listen(process.env.PORT || 5000)
+  app.listen(3000);
