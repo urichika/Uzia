@@ -13,7 +13,7 @@ var pool  = mysql.createPool({
   
   module.exports = pool;
 
-pool.connect((err) => {
+connection.connect((err) => {
     if (err) {
       console.log('error connecting: ' + err.stack);
       return;
@@ -27,7 +27,7 @@ pool.connect((err) => {
 
 
   app.get('/', (req, res) => {
-    pool.query(
+    connection.query(
       'SELECT \
          id,ブルワリー,name,IBU,ABV,スタイル \
        FROM \
@@ -39,7 +39,7 @@ pool.connect((err) => {
   });
 
   app.get('/Food',(req,res) => {
-    pool.query(
+    connection.query(
       'SELECT \
          name,price,genre,info \
        FROM \
@@ -53,7 +53,7 @@ pool.connect((err) => {
   })
 
   app.get('/Drink',(req,res) => {
-    pool.query(
+    connection.query(
       'SELECT \
          name,price,genre,base1 \
        FROM \
@@ -67,7 +67,7 @@ pool.connect((err) => {
   })
 
   app.get('/Limited',(req,res) => {
-    pool.query(
+    connection.query(
       'SELECT \
          name,price,genre,info \
        FROM \
@@ -82,7 +82,7 @@ pool.connect((err) => {
 
   app.get('/Drink/BaseSearch',(req,res) => {
     const Base = req.query.Base;
-    pool.query(
+    connection.query(
       'SELECT \
          name,genre,base1,base2,base3,base4,base5,base6,base7 \
        FROM \
@@ -104,7 +104,7 @@ pool.connect((err) => {
 
   app.get('/Drink/NameSearch',(req,res) => {
       const Name = req.query.Name;
-    pool.query(
+    connection.query(
       'SELECT \
          name,genre,base1,base2,base3,base4,base5,base6,base7 \
        FROM \
