@@ -4,14 +4,13 @@ const mysql = require('mysql');
 const app = express();
 app.use(express.static('public')); //ワンちゃんこの文いらない
 
-const pool  = mysql.createPool({
+const connection = mysql.createConnection({
   host: 'us-cdbr-east-04.cleardb.com',
   user: 'b431019deb93b8',
   password: '3ecab8a6',
   database: 'heroku_67ebfde3e758845'
-  });
-  
-  module.exports = pool;
+});
+
 
 connection.connect((err) => {
     if (err) {
