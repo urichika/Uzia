@@ -3,25 +3,40 @@ var mysql = require('mysql');
 var app = express();
 app.use(express.static('public')); //ワンちゃんこの文いらない
 
-var connection = mysql.createConnection({
-  host: 'us-cdbr-east-04.cleardb.com',
-  user: 'b431019deb93b8',
-  password: '3ecab8a6',
-  database: 'heroku_67ebfde3e758845'
-});
+var connection;
 
+function handleDisconnect() {
+    console.log('INFO.CONNECTION_DB: ');
+    connection = mysql.createConnection({
+      host: 'us-cdbr-east-04.cleardb.com',
+      user: 'b431019deb93b8',
+      password: '3ecab8a6',
+      database: 'heroku_67ebfde3e758845'
+    });
+    
+    //connection取得
+    connection.connect(function(err) {
+        if (err) {
+            console.log('ERROR.CONNECTION_DB: ', err);
+            setTimeout(handleDisconnect, 1000);
+        }
+    });
+    
+    //error('PROTOCOL_CONNECTION_LOST')時に再接続
+    connection.on('error', function(err) {
+        console.log('ERROR.DB: ', err);
+        if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+            console.log('ERROR.CONNECTION_LOST: ', err);
+            handleDisconnect();
+        } else {
+            throw err;
+        }
+    });
+}
 
-connection.connect((err) => {
-    if (err) {
-      console.log('error connecting: ' + err.stack);
-      return;
-    }
-    console.log('success');
-});
+handleDisconnect();
 
   app.use(express.urlencoded({extended:false}));
-
-
 
   app.get('/', (req, res) => {
     connection.query(
