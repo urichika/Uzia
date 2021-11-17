@@ -4,14 +4,16 @@ const mysql = require('mysql');
 const app = express();
 app.use(express.static('public')); //ワンちゃんこの文いらない
 
-const connection = mysql.createConnection({
+var pool  = mysql.createPool({
   host: 'us-cdbr-east-04.cleardb.com',
   user: 'b431019deb93b8',
   password: '3ecab8a6',
   database: 'heroku_67ebfde3e758845'
-});
+  });
+  
+  module.exports = pool;
 
-connection.connect((err) => {
+pool.connect((err) => {
     if (err) {
       console.log('error connecting: ' + err.stack);
       return;
@@ -25,7 +27,7 @@ connection.connect((err) => {
 
 
   app.get('/', (req, res) => {
-    connection.query(
+    pool.query(
       'SELECT \
          id,ブルワリー,name,IBU,ABV,スタイル \
        FROM \
@@ -37,7 +39,7 @@ connection.connect((err) => {
   });
 
   app.get('/Food',(req,res) => {
-    connection.query(
+    pool.query(
       'SELECT \
          name,price,genre,info \
        FROM \
@@ -51,7 +53,7 @@ connection.connect((err) => {
   })
 
   app.get('/Drink',(req,res) => {
-    connection.query(
+    pool.query(
       'SELECT \
          name,price,genre,base1 \
        FROM \
@@ -65,7 +67,7 @@ connection.connect((err) => {
   })
 
   app.get('/Limited',(req,res) => {
-    connection.query(
+    pool.query(
       'SELECT \
          name,price,genre,info \
        FROM \
@@ -80,7 +82,7 @@ connection.connect((err) => {
 
   app.get('/Drink/BaseSearch',(req,res) => {
     const Base = req.query.Base;
-    connection.query(
+    pool.query(
       'SELECT \
          name,genre,base1,base2,base3,base4,base5,base6,base7 \
        FROM \
@@ -102,7 +104,7 @@ connection.connect((err) => {
 
   app.get('/Drink/NameSearch',(req,res) => {
       const Name = req.query.Name;
-    connection.query(
+    pool.query(
       'SELECT \
          name,genre,base1,base2,base3,base4,base5,base6,base7 \
        FROM \
