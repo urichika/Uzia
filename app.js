@@ -4,7 +4,7 @@ const mysql = require('mysql');
 const app = express();
 app.use(express.static('public')); //ワンちゃんこの文いらない
 
-var pool  = mysql.createPool({
+const pool  = mysql.createPool({
   host: 'us-cdbr-east-04.cleardb.com',
   user: 'b431019deb93b8',
   password: '3ecab8a6',
@@ -13,6 +13,13 @@ var pool  = mysql.createPool({
   
   module.exports = pool;
 
+connection.connect((err) => {
+    if (err) {
+      console.log('error connecting: ' + err.stack);
+      return;
+    }
+    console.log('success');
+  });
 
   app.use(express.static('public'));
   app.use(express.urlencoded({extended:false}));
