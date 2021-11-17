@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+    <head>
+      <meta charset = "utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Uzia</title>
+      <link rel="stylesheet" href="/css/stylesheet.css">
+      <link rel="stylesheet" href="/css/responsive.css">
+    </head>
+
+    <body>
+        <header>
+            <div class = "header_left">
+                <a href="/">Pub <br class="br_res">entrance <br class="br_res">uzia</a>
+            </div>
+            <div class = "header_right">
+                <a href="/#menu_btn_list">メニュー</a>
+                <a href="/access">アクセス</a>
+            </div>
+        </header>
+
+        <div class = "main menu">
+            <h1>ドリンクメニュー</h1>
+            <div id="search_btn_list">
+                <div class="search_btn"><a href="/Drink/BaseSearch" class="btn2">ベースリキュールから検索</a></div>
+                <div class="search_btn"><a href="/Drink/NameSearch" class="btn2">カクテル名から検索</a></div>
+            </div>
+            <h2>ボトルビール</h2>
+            <% drinks.forEach((drink) => { %>
+                <ul class="tab-reader">
+                  <% if(drink.genre == 'ボトルビール'){ %>
+                        <li class="flex">
+                            <span class="mgl-30"><%= drink.name %></span>
+                            <span class="tab-reader-box"><hr class="tab-r-line"></span>
+                            <span><%= drink.price %></span>
+                        </li>
+                  <% } %>
+                </ul>
+            <% }) %>
+            <p class="mgb-30"></p>
+
+            <h2>カクテル</h2>
+            <% let bef_base = 'none' %>
+            <% drinks.forEach((drink) => { %>
+                <ul class="tab-reader">
+                  <% if(drink.genre == 'カクテル' && drink.price == '550'){ %>
+                    <% if(bef_base != drink.base1){ %>
+                      <% if(bef_base != 'none'){ %>
+                          <p class="mgb-15"></p>
+                      <% } %>
+                    <% } %>
+                        <li class="flex">
+                            <span class="mgl-30"><%= drink.name %></span>
+                            <span class="tab-reader-box"><hr class="tab-r-line"></span>
+                            <span><%= drink.price %></span>
+                        </li>
+                    <% bef_base = drink.base1 %>
+                  <% } %>
+                </ul>
+            <% }) %>
+            <p class="mgb-40"></p>
+
+            <% bef_base = 'none' %>
+            <% drinks.forEach((drink) => { %>
+                <ul class="tab-reader">
+                  <% if(drink.genre == 'カクテル' && drink.price == '600'){ %>
+                    <% if(bef_base != drink.base1){ %>
+                      <% if(bef_base != 'none'){ %>
+                          <p class="mgb-15"></p>
+                      <% } %>
+                    <% } %>
+                        <li class="flex">
+                            <span class="mgl-30"><%= drink.name %></span>
+                            <span class="tab-reader-box"><hr class="tab-r-line"></span>
+                            <span><%= drink.price %></span>
+                        </li>
+                    <% bef_base = drink.base1 %>
+                  <% } %>
+                </ul>
+            <% }) %>
+            <p class="mgb-40"></p>
+
+            <% bef_base = 'none' %>
+            <% drinks.forEach((drink) => { %>
+                <ul class="tab-reader">
+                  <% if(drink.genre == 'カクテル' && drink.price != '550' && drink.price != '600'){ %>
+                    <% if(bef_base != drink.base1){ %>
+                      <% if(bef_base != 'none'){ %>
+                          <p class="mgb-15"></p>
+                      <% } %>
+                    <% } %>
+                        <li class="flex">
+                            <span class="mgl-30"><%= drink.name %></span>
+                            <span class="tab-reader-box"><hr class="tab-r-line"></span>
+                            <span><%= drink.price %></span>
+                        </li>
+                    <% bef_base = drink.base1 %>
+                  <% } %>
+                </ul>
+            <% }) %>
+            <p class="mgb-30"></p>
+
+            <h2>スコッチ　ウィスキー</h2>
+            <% drinks.forEach((drink) => { %>
+                <ul class="tab-reader">
+                  <% if(drink.genre == 'スコッチ　ウィスキー'){ %>
+                        <li class="flex">
+                            <span class="mgl-30"><%= drink.name %></span>
+                            <span class="tab-reader-box"><hr class="tab-r-line"></span>
+                            <span><%= drink.price %></span>
+                        </li>
+                  <% } %>
+                </ul>
+            <% }) %>
+            <p class="mgb-30"></p>
+
+            <h2>ジャパニーズ　ウィスキー</h2>
+            <% drinks.forEach((drink) => { %>
+                <ul class="tab-reader">
+                  <% if(drink.genre == 'ジャパニーズ　ウィスキー'){ %>
+                        <li class="flex">
+                            <span class="mgl-30"><%= drink.name %></span>
+                            <span class="tab-reader-box"><hr class="tab-r-line"></span>
+                            <span><%= drink.price %></span>
+                        </li>
+                  <% } %>
+                </ul>
+            <% }) %>
+            <p class="mgb-30"></p>
+
+            <h2>バーボン　ウィスキー</h2>
+            <% drinks.forEach((drink) => { %>
+                <ul class="tab-reader">
+                  <% if(drink.genre == 'バーボン　ウィスキー'){ %>
+                        <li class="flex">
+                            <span class="mgl-30"><%= drink.name %></span>
+                            <span class="tab-reader-box"><hr class="tab-r-line"></span>
+                            <span><%= drink.price %></span>
+                        </li>
+                  <% } %>
+                </ul>
+            <% }) %>
+            <p class="mgb-30"></p>
+
+            <h2>カナディアン　ウィスキー</h2>
+            <% drinks.forEach((drink) => { %>
+                <ul class="tab-reader">
+                  <% if(drink.genre == 'カナディアン　ウィスキー'){ %>
+                        <li class="flex">
+                            <span class="mgl-30"><%= drink.name %></span>
+                            <span class="tab-reader-box"><hr class="tab-r-line"></span>
+                            <span><%= drink.price %></span>
+                        </li>
+                  <% } %>
+                </ul>
+            <% }) %>
+            <p class="mgb-30"></p>
+
+            <h2>アイリッシュ　ウィスキー</h2>
+            <% drinks.forEach((drink) => { %>
+                <ul class="tab-reader">
+                  <% if(drink.genre == 'アイリッシュ　ウィスキー'){ %>
+                    
+                        <li class="flex">
+                            <span class="mgl-30"><%= drink.name %></span>
+                            <span class="tab-reader-box"><hr class="tab-r-line"></span>
+                            <span><%= drink.price %></span>
+                        </li>
+                  <% } %>
+                </ul>
+            <% }) %>
+            <p class="mgb-30"></p>
+
+            <h2>ラム</h2>
+            <% drinks.forEach((drink) => { %>
+                <ul class="tab-reader">
+                  <% if(drink.genre == 'ラム'){ %>
+                        <li class="flex">
+                            <span class="mgl-30"><%= drink.name %></span>
+                            <span class="tab-reader-box"><hr class="tab-r-line"></span>
+                            <span><%= drink.price %></span>
+                        </li>
+                  <% } %>
+                </ul>
+            <% }) %>
+            <p class="mgb-30"></p>
+
+            <h2>シェリー</h2>
+            <% drinks.forEach((drink) => { %>
+                <ul class="tab-reader">
+                  <% if(drink.genre == 'シェリー'){ %>
+                        <li class="flex">
+                            <span class="mgl-30"><%= drink.name %></span>
+                            <span class="tab-reader-box"><hr class="tab-r-line"></span>
+                            <span><%= drink.price %></span>
+                        </li>
+                  <% } %>
+                </ul>
+            <% }) %>
+            <p class="mgb-30"></p>
+
+            <h2>焼酎</h2>
+            <% drinks.forEach((drink) => { %>
+                <ul class="tab-reader">
+                  <% if(drink.genre == '焼酎'){ %>
+                        <li class="flex">
+                            <span class="mgl-30"><%= drink.name %></span>
+                            <span class="tab-reader-box"><hr class="tab-r-line"></span>
+                            <span><%= drink.price %></span>
+                        </li>
+                  <% } %>
+                </ul>
+            <% }) %>
+            <p class="mgb-30"></p>
+
+            <h2>ノンアルコール</h2>
+            <% let bef_price = 'none' %>
+            <% drinks.forEach((drink) => { %>
+                <ul class="tab-reader">
+                  <% if(drink.genre == 'ノンアルコール' && drink.price == '350'){ %>
+                    <% if(bef_price != drink.price){ %>
+                      <% if(bef_price != 'none'){ %>
+                          <p class="mgb-15"></p>
+                      <% } %>
+                    <% } %>
+                        <li class="flex">
+                            <span class="mgl-30"><%= drink.name %></span>
+                            <span class="tab-reader-box"><hr class="tab-r-line"></span>
+                            <span><%= drink.price %></span>
+                        </li>
+                    <% bef_base = drink.base1 %>
+                  <% } %>
+                </ul>
+            <% }) %>
+            <p class="mgb-40"></p>
+
+            <% bef_price = 'none' %>
+            <% drinks.forEach((drink) => { %>
+                <ul class="tab-reader">
+                  <% if(drink.genre == 'ノンアルコール' && drink.price == '380'){ %>
+                    <% if(bef_price != drink.price){ %>
+                      <% if(bef_price != 'none'){ %>
+                          <p class="mgb-15"></p>
+                      <% } %>
+                    <% } %>
+                        <li class="flex">
+                            <span class="mgl-30"><%= drink.name %></span>
+                            <span class="tab-reader-box"><hr class="tab-r-line"></span>
+                            <span><%= drink.price %></span>
+                        </li>
+                    <% bef_base = drink.base1 %>
+                  <% } %>
+                </ul>
+            <% }) %>
+            <p class="mgb-40"></p>
+
+            <% bef_price = 'none' %>
+            <% drinks.forEach((drink) => { %>
+                <ul class="tab-reader">
+                  <% if(drink.genre == 'ノンアルコール' && drink.price == '450'){ %>
+                    <% if(bef_price != drink.price){ %>
+                      <% if(bef_price != 'none'){ %>
+                          <p class="mgb-15"></p>
+                      <% } %>
+                    <% } %>
+                        <li class="flex">
+                            <span class="mgl-30"><%= drink.name %></span>
+                            <span class="tab-reader-box"><hr class="tab-r-line"></span>
+                            <span><%= drink.price %></span>
+                        </li>
+                    <% bef_base = drink.base1 %>
+                  <% } %>
+                </ul>
+            <% }) %>
+            <p class="mgb-30"></p>
+
+        </div>
+
+        <footer>
+            <div class = "footer_left">
+              <p>Pub entrance uzia</p>
+              <dl class = "shop_data">
+                <dt>住所</dt>
+                    <dd>〒965-0042 福島県会津若松市大町2丁目5-3</dd>
+                <dt>営業時間</dt>
+                    <dd>17:00 ~ 2:00(L.O 1:00)</dd>
+                <dt>定休日</dt>
+                    <dd>日曜日</dd>
+                <dt>電話番号</dt>
+                    <dd>0242-77-5707</dd>
+              </dl>
+            </div>
+            <div class = "footer_right">
+                <ul>
+                    <li class="Insta">
+                        <a href="https://www.instagram.com/pub.entrance.uzia/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    </li>
+                    <li class="Face">
+                        <a href="https://www.facebook.com/Pab-entrance-Uzia-103641591640807/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    </li>
+                    <li class="twi">
+                        <a href="https://twitter.com/uziapub" target="_blank" rel="noopener noreferrer">twitter</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>

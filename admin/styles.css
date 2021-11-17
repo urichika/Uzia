@@ -1,0 +1,110 @@
+/* css reset */
+@charset "utf-8";
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p, img, a,
+ol, ul, li,
+form, label,
+table, tbody, tfoot, thead, tr, th, td,
+article,footer, header, menu, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  list-style: none;
+  text-decoration: none;
+  vertical-align: baseline;
+}
+
+/* 共通CSS */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+.wrapper {
+    padding: 80px 0;
+    margin-bottom: 80px;
+}
+
+    .wrapper-title {
+        margin-bottom: 30px;
+        border-bottom: 1px solid #a2aab0;
+    }
+
+    .wrapper-title h3{
+        font-size: 25px;
+        color: #3e3e3b;
+    }
+
+    .wrapper-title p {
+        font-size: 13px;
+        color: #a2aab0;
+    }
+
+.btn {
+    padding: 10px 30px;
+    font-size: 15px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 20px;
+}
+
+.btn:hover{
+    cursor: pointer;
+    opacity: .8;
+}
+
+.btn-submit {
+    background-color: #4c586f;
+    color: #fff;
+}
+
+/* login */
+.login-wrapper {
+    text-align: center;
+    padding: 80px 0 ;
+}
+    .login-wrapper-title {
+        margin-bottom: 30px;
+    }
+
+    .login-wrapper-title h3{
+        font-size: 25px;
+        color: #3e3e3b;
+    }
+
+    .login-wrapper-title p {
+        font-size: 13px;
+        color: #a2aab0;
+    }
+
+.login {
+    padding: 50px 0; 
+    width: 50%;
+    margin: 0 auto;
+    background-color: #ebeced;
+}
+    .login-form {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .login-form input {
+        border: none;
+        width: 100%;
+        height: 25px;
+    }
+
+    .login-form p {
+        text-align: left;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }

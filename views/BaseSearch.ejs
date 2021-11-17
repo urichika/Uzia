@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+    <head>
+      <meta charset = "utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Uzia</title>
+      <link rel="stylesheet" href="/css/stylesheet.css">
+      <link rel="stylesheet" href="/css/responsive.css">
+      <link rel="stylesheet" href="/css/jquery-ui.css">
+      <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+      <script type="text/javascript" src="/js/jquery-ui.js"></script>
+      <script type="text/javascript" src="/js/suggest-script.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <div class = "header_left">
+                <a href="/">Pub <br class="br_res">entrance <br class="br_res">uzia</a>
+            </div>
+            <div class = "header_right">
+                <a href="/#menu_btn_list">メニュー</a>
+                <a href="/access">アクセス</a>
+            </div>
+        </header>
+
+        <div class = "main Search">
+          <a href="/Drink/NameSearch" class="move">> カクテル名検索はこちらから</a>
+          <div class="search_place">
+              <h1>ベースリキュールから検索</h1>
+            <div class="search_form">
+                <form action="/Drink/BaseSearch" method="get">
+                  <input type="search" name="Base" autocomplete="off" id="base_keyword">
+                  <input type="submit" value="検索">
+                </form>
+                <span class="mgr-20"></span>
+                <span class="size-18">もしくはリストから選択</span>
+                <span class="mgr-20"></span>
+                <form action="/Drink/BaseSearch" method="get">
+                  <select name="Base">
+                    <option value="ウォッカ">ウォッカ</option>
+                    <option value="ジン">ジン</option>
+                    <option value="ラム">ラム</option>
+                    <option value="テキーラ">テキーラ</option>
+                    <option value="カシス">カシス</option>
+                    <option value="カンパリ">カンパリ</option>
+                    <option value="アップル">アップル</option>
+                    <option value="カルーア">カルーア</option>
+                    <option value="抹茶">抹茶</option>
+                    <option value="ビール">ビール</option>
+                    <option value="赤ワイン">赤ワイン</option>
+                    <option value="白ワイン">白ワイン</option>
+                    <option value="ピーチ">ピーチ</option>
+                    <option value="マリブ">マリブ</option>
+                    <option value="バナナ">バナナ</option>
+                    <option value="ストロベリー">ストロベリー</option>
+                    <option value="フランボワーズ">フランボワーズ</option>
+                    <option value="焼酎">焼酎</option>
+                    <option value="イエガー">イエガー</option>
+                    <option value="アマレット">アマレット</option>
+                    <option value="ティフィン">ティフィン</option>
+                    <option value="ドランブイ">ドランブイ</option>
+                    <option value="アドヴォカート">アドヴォカート</option>
+                    <option value="シェリー">シェリー</option>
+                    <option value="ドライベルモット">ドライベルモット</option>
+                    <option value="スウィートベルモット">スウィートベルモット</option>
+                    <option value="コアントロー">コアントロー</option>
+                    <option value="ブルーキュラソー">ブルーキュラソー</option>
+                    <option value="ミント">ミント</option>
+                    <option value="ウィスキー">ウィスキー</option>
+                    <option value="バーボンウィスキー">バーボンウィスキー</option>
+                    <option value="ブランデー">ブランデー</option>
+                  </select>
+                  <input type="submit" value="検索">
+                </form>
+            </div>
+
+            <ul>
+              <% kakuterus.forEach((kakuteru) => { %>
+                <li class="result_square">
+                    <div class="Base_result">
+                        <span class="kakuteru_name"><%= kakuteru.name %></span>
+                        <ul>
+                            <li class="style">
+                                <% if(kakuteru.base1 != null){ %>
+                                    <span>・</span> 
+                                <% } %>
+                                <span><%= kakuteru.base1 %></span>
+                            </li>
+                            <li class="style">
+                                <% if(kakuteru.base2 != null){ %>
+                                    <span>・</span> 
+                                <% } %>
+                                <span><%= kakuteru.base2 %></span>
+                            </li>
+                            <li class="style">
+                                <% if(kakuteru.base3 != null){ %>
+                                    <span>・</span> 
+                                <% } %>
+                                <span><%= kakuteru.base3 %></span>
+                            </li>
+                            <li class="style">
+                                <% if(kakuteru.base4 != null){ %>
+                                    <span>・</span> 
+                                <% } %>
+                                <span><%= kakuteru.base4 %></span>
+                            </li>
+                            <li class="style">
+                                <% if(kakuteru.base5 != null){ %>
+                                    <span>・</span> 
+                                <% } %>
+                                <span><%= kakuteru.base5 %></span>
+                            </li>
+                            <li class="style">
+                                <% if(kakuteru.base6 != null){ %>
+                                    <span>・</span> 
+                                <% } %>
+                                <span><%= kakuteru.base6 %></span>
+                            </li>
+                            <li class="style">
+                                <% if(kakuteru.base7 != null){ %>
+                                    <span>・</span> 
+                                <% } %>
+                                <span><%= kakuteru.base7 %></span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+              <% }) %>
+            </ul>
+          </div>
+        </div>
+
+        <footer>
+            <div class = "footer_left">
+              <p>Pub entrance uzia</p>
+              <dl class = "shop_data">
+                <dt>住所</dt>
+                    <dd>〒965-0042 福島県会津若松市大町2丁目5-3</dd>
+                <dt>営業時間</dt>
+                    <dd>17:00 ~ 2:00(L.O 1:00)</dd>
+                <dt>定休日</dt>
+                    <dd>日曜日</dd>
+                <dt>電話番号</dt>
+                    <dd>0242-77-5707</dd>
+              </dl>
+            </div>
+            <div class = "footer_right">
+                <ul>
+                    <li class="Insta">
+                        <a href="https://www.instagram.com/pub.entrance.uzia/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    </li>
+                    <li class="Face">
+                        <a href="https://www.facebook.com/Pab-entrance-Uzia-103641591640807/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    </li>
+                    <li class="twi">
+                        <a href="https://twitter.com/uziapub" target="_blank" rel="noopener noreferrer">twitter</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>

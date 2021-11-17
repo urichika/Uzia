@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+    <head>
+      <meta charset = "utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Uzia</title>
+      <link rel="stylesheet" type="text/css" href="/css/slick-theme.css">
+      <link rel="stylesheet" type="text/css" href="/css/slick.css">
+      <link rel="stylesheet" href="/css/stylesheet.css">
+      <link rel="stylesheet" href="/css/responsive.css">
+      <script type="text/javascript" src="/js/jquery-2.2.0.min.js"></script>
+      <script type="text/javascript" src="/js/slick.min.js"></script>
+      <script type="text/javascript" src="/js/slick-script.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <div class = "header_left">
+                <a href="/">Pub <br class="br_res">entrance <br class="br_res">Uzia</a>
+            </div>
+            <div class = "header_right">
+                <a href="/#menu_btn_list">メニュー</a>
+                <a href="/access">アクセス</a>
+            </div>
+        </header>
+
+        <div class = "main top">
+                <div class="slideshow_bg">
+                    <div class="sliderArea">
+                      <div class="regular slider">
+                        <div><img src="/images/入口.jpg" alt="画像1"></div>
+                        <div><img src="/images/menu.jpg" alt="画像2"></div>
+                        <div><img src="/images/pasta.jpg" alt="画像3"></div>
+                        <div><img src="/images/sosezi.jpg" alt="画像4"></div>
+                        <div><img src="/images/hamukatu.jpg" alt="画像5"></div>
+                        <div><img src="/images/S__70672390.jpg" alt="画像6"></div>
+                        <div><img src="/images/serjar.jpg" alt="画像7"></div>
+                      </div>
+                    </div>
+                </div>
+                <div id = "intro">
+                    <p class="sentence">Pub entrance Uziaは樽生ビール10種類,
+                      <br>本格的なカクテルとウィスキーが豊富なダイニングバーです。</p>
+                    <img src="/images/S__70672395.jpg" alt="" class="photo">
+                </div>
+                <div class="title_board">
+                    <p class="title">現在の生樽ラインナップ</p>
+                </div>
+                <ul class="kokuban">
+                    <% beers.forEach((beer) => { %>
+                      <li class="beer_list">
+                        <div class="beer">
+                          <span><%= beer.id %></span>
+                          <span><%= beer.ブルワリー %></span><br>
+                          <span><%= beer.name %></span><br>
+                          <% if(beer.IBU == null){ %>
+                            <span class="mgr-10"><%= "IBU --"%></span>
+                          <% } else { %>
+                            <span class="mgr-10"><%= "IBU " + beer.IBU %></span>
+                          <% } %>
+                          <% if(beer.ABV == null){ %>
+                            <span><%= "ABV --"%></span><br>
+                          <% } else { %>
+                            <span><%= "ABV " + beer.ABV + "%" %></span><br>
+                          <% } %>
+                          <span><%= beer.スタイル %></span>
+                        </div>
+                      </li>
+                    <% }) %>
+                </ul>
+
+                <div id="menu_btn_list">
+                    <div class="menu_btn">
+                        <div><img src="/images/S__70696966.jpg" alt="Food_photo"></div>
+                        <a href="/Food" class="btn1">> フードメニュー</a>
+                    </div>
+                    <div class="menu_btn">
+                        <div><img src="/images/S__70696967.jpg" alt="Drink_photo"></div>
+                        <a href="/Drink" class="btn1">> ドリンクメニュー</a>
+                    </div>
+                    <div class="menu_btn">
+                        <div><img src="/images/S__70696970.jpg" alt="limited_photo"></div>
+                        <a href="/Limited" class="btn1 limited_btn">> 期間限定メニュー</a>
+                    </div>
+                </div>
+        </div>
+
+        <footer>
+            <div class = "footer_left">
+              <p>Pub entrance Uzia</p>
+              <dl class = "shop_data">
+                <dt>住所</dt>
+                    <dd>〒965-0042 福島県会津若松市大町2丁目5-3</dd>
+                <dt>営業時間</dt>
+                    <dd>17:00 ~ 2:00(L.O 1:00)</dd>
+                <dt>定休日</dt>
+                    <dd>日曜日</dd>
+                <dt>電話番号</dt>
+                    <dd>0242-77-5707</dd>
+              </dl>
+            </div>
+            <div class = "footer_right">
+                <ul>
+                    <li class="Insta">
+                        <a href="https://www.instagram.com/pub.entrance.uzia/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    </li>
+                    <li class="Face">
+                        <a href="https://www.facebook.com/Pab-entrance-Uzia-103641591640807/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    </li>
+                    <li class="twi">
+                        <a href="https://twitter.com/uziapub" target="_blank" rel="noopener noreferrer">twitter</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+      <meta charset = "utf-8">
+      <title>kakuteru</title>
+      <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+
+    <body>
+        <header>
+            <a href="/" class = "top">
+                カクテルサイト
+            </a>
+        </header>
+
+        <div class = "main">
+            <a href="/search/NameSearch">戻る</a>
+            <% kakuterus.forEach((kakuteru) => { %>
+                <li>
+                    <div class = "username">
+                        <span><%= kakuteru.name %></span>
+                        <span><%= kakuteru.base1 %></span>
+                        <span><%= kakuteru.base2 %></span>
+                        <span><%= kakuteru.base3 %></span>
+                        <span><%= kakuteru.base4 %></span>
+                        <span><%= kakuteru.base5 %></span>
+                        <span><%= kakuteru.base6 %></span>
+                        <span><%= kakuteru.base7 %></span>
+                    </div>
+                </li>
+                <% }) %>
+        </div>
+
+        <footer>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,472 @@
+* {
+    margin:0; padding:0;
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Avenir Next";
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+* {
+    box-sizing: border-box;
+  }/*これを書くと子要素が必ず親要素の中に収まる。*/
+
+
+.main{
+    margin-top: 120px;
+    background-color: rgba(232, 240, 236, 0.808);
+}
+
+.mgb-15{
+    margin-top: 15px;
+}
+.mgb-30{
+    margin-bottom: 30px;
+}
+.mgb-40{
+    margin-bottom: 40px;
+}
+.mgr-20{
+    margin-right: 20px;
+}
+.mgl-30{
+    margin-left: 30px;
+}
+.size-18{
+    font-size: 18px;
+}
+
+
+
+/*--------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------header---------------------------------------------------
+--------------------------------------------------------------------------------------------------------------*/
+header{
+    background-color: rgba(0,0,0,0.9);
+    height:120px;
+    width: 100%;
+    /*border-top: 10px solid rgb(0, 73, 0); 
+    headerの上に線を引くなら書く。中に書くなら直接表現できないから、
+    線の太さ分headerを短くしてheader内の文字をline-heightじゃなくて自力で合わせるのがいいかな*/
+    position:fixed;
+    top:0px;
+    z-index:10;
+}
+.br_res{
+    display: none;
+}
+.header_left{
+    float:left;
+    margin-left: 20px;
+}
+.header_left a{
+    line-height: 120px;
+    color:rgba(255,255,255,0.9);
+    font-size: 60px;
+}
+.header_right{
+    float:right;
+}
+.header_right a{
+    line-height: 120px;
+    padding: 0 25px;
+    color:white;
+    display: block;
+    float: left;
+    font-size: 22px;
+    transition: all 0.5s;
+}
+.header_right a:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+
+
+/*--------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------footer---------------------------------------------------
+--------------------------------------------------------------------------------------------------------------*/
+footer{
+    background-color: #000;
+    color: rgba(255,255,255,0.75);
+    height: 300px;
+    padding: 10px;
+}
+.footer_left p{
+    font-size: 30px;
+    margin-left: 10px;
+}
+.footer_left dl{
+    float: left;
+    margin-left: 50px;
+    font-size: 20px;
+}
+.footer_left dt{
+    margin-right: 0.5em ;
+    width: 120px ;
+}
+.footer_left dd{
+    display: inline-block;
+    margin-left: 1.7em ;
+}
+
+
+
+.footer_right{
+    float:right;
+    font-size: 30px;
+}
+.footer_right a{
+    color: rgba(255,255,255,0.75);
+    display: inline-block;
+    margin-right:15px;
+}
+.Insta{
+    margin-bottom: 21px;
+}
+.Face{
+    margin: 35px auto;
+}
+.twi{
+    margin-top: 21px;
+}
+
+
+
+/*--------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------top.ejs--------------------------------------------------
+--------------------------------------------------------------------------------------------------------------*/
+.top{
+    margin-top: unset;
+}
+.slideshow_bg{
+    background-image: url(/images/test2.png);
+    background-size: cover;
+    height: 1000px;
+    width: 100%;
+    background-color:rgba(202, 202, 202, 0.8);
+    background-blend-mode:lighten;
+}
+#intro{
+    font-size: 40px;
+    text-align: center;
+    margin-bottom:90px;
+    color: rgb(0, 0, 0);
+/*    background-color: rgba(255, 250, 236, 0.151);*/
+}
+#intro p{
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+#intro img{
+    height:544px;
+    width: 75%;
+    border-radius: 40px;
+}
+
+/*-----------黒板背景---------*/
+.kokuban {
+    position: relative;
+    margin: 3em auto;
+    padding: 1em;
+    width: 90%; /* ボックス幅 */
+    background: #00331a; /* ボックス背景色 */
+    color: rgba(226, 226, 226, 0.928); /* 文章色 */
+    border: 10px solid #4e2300; /* 枠線 */
+    border-radius: 2px; /* 角の丸み */
+    box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
+    text-align: center;
+}
+
+.title_board{
+    text-align: center;
+}
+.title{
+    display: inline-block;
+    border: thick double #006633;
+    border-width: 7px;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+}
+.beer_list{
+    display: inline-block;
+    text-align: left;
+}
+.beer{
+    padding: 20px 30px;
+}
+.beer span{
+    font-size: 25px;
+}
+.mgr-10{
+    margin-right: 10px;
+}
+#menu_btn_list{
+    display: flex;
+    padding-top: 120px;
+}
+.menu_btn{
+    width : 33.33333% ; /* 未対応ブラウザ用フォールバック */
+    width : -webkit-calc(100% / 3) ;
+    width : calc(100% / 3) ;
+    margin-bottom: 100px;
+    text-align: center;
+}
+.menu_btn img{
+    height: 400px;
+    display: block;
+    margin:10px auto 25px auto;
+    border:13px outset rgba(202, 202, 195, 0.9);
+    border-radius: 1px; /*堅い雰囲気なら1px,優しい感じなら50弱*/
+}
+.menu_btn a{
+    font-size: 24px;
+    padding: 8px 10px;
+    color: black;
+    text-decoration: underline;
+}
+.btn1 {
+    background-color: #2ab68c;
+    display: inline-block;
+    opacity: 1;
+    border-radius: 4px;
+    height: auto;
+    width:auto;
+}
+.btn1:hover {
+    opacity: 0.8;
+}
+
+
+
+/*--------------------------------------------------------------------------------------------------------------
+--------------------------------------Food.ejs & Drink.ejs & Limited.ejs----------------------------------------
+--------------------------------------------------------------------------------------------------------------*/
+.menu{
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom:100px;
+}
+.menu h1 {
+    text-align: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    padding-top: 80px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 35px;
+}
+h2 {
+    margin-bottom: 2px;
+}
+.flex {
+    display: flex;
+    display: -ms-flexbox;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    width: 100%;
+}
+.right{
+    width: 100%;
+    text-align: right;
+}
+hr.tab-r-line {
+    position: relative;
+    top: calc(50% - 1px);
+    margin: 0 15px;
+    border: none;
+    border-top: dotted 2px black;
+}
+.tab-reader span{
+    font-size: 18px;
+}
+.tab-reader-box {
+    flex: auto;
+}
+#search_btn_list{
+    display: flex;
+    margin-bottom: 30px;
+}
+.search_btn{
+    width : 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+.search_btn a{
+    font-size: 24px;
+    padding: 8px 10px;
+    color: rgba(232, 240, 236, 1);
+}
+.btn2 {
+    background-color: black;
+    display: inline-block;
+    opacity: 1;
+    border-radius: 3px;
+    height: auto;
+    width:auto;
+}
+.btn2:hover {
+    opacity: 0.8;
+    color: rgba(232, 240, 236, 0.808)
+}
+
+
+
+/*--------------------------------------------------------------------------------------------------------------
+-----------------------------------------BaseSearch.ejs & NameSearch.ejs----------------------------------------
+--------------------------------------------------------------------------------------------------------------*/
+.Search{
+    padding: 20px 20px 100px 20px;
+}
+.move{
+    font-size: 15px;
+    color: black;
+}
+.search_place{
+    padding: 20px 20px 0px 20px;
+}
+.search_form{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.search_form form{
+    display: inline-block;
+}
+input, select{
+    font-size: 18px;
+}
+.kakuteru_name{
+    display: block;
+    font-size: 23px;
+    width: 100%;
+    border-bottom: 2px solid black;
+    padding: 3px 20px 1px 5px;
+}
+.Base_result{
+    display: inline-block;
+    background-color: rgba(194, 194, 194, 0.63);
+    margin-bottom: 30px;
+    border: 2px solid black;
+    width: 100%; /*229pxだった*/
+}
+.Name_result{
+    display: inline-block;
+    background-color: rgba(194, 194, 194, 0.63);
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border: 2px solid black;
+    width: auto;
+    height: auto;
+}
+.style{
+    margin-right: 10px;
+    font-size: 18px;
+}
+.result_square{
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 25px;
+}
+
+
+
+/*--------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------access.ejs-------------------------------------------------
+--------------------------------------------------------------------------------------------------------------*/
+.map{
+    text-align: center;
+    padding-bottom: 100px;
+}
+.map h1{
+    background-color: rgba(255, 255, 255, 0.45);
+    height: 165px;
+    line-height: 165px;
+    font-size: 40px;
+    margin:0 auto 40px auto;
+}
+.gmap-wrap{
+    width: 80%;
+    margin: 0 auto;
+}
+.gmap {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+}
+.gmap iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+.post{
+    text-align: left;
+    font-size: 30px;
+    margin-left: 100px;
+    margin-bottom: 10px;
+}
+.address{
+    text-align: left;
+    font-size: 30px;
+    margin-left: 170px;
+    margin-bottom: 30px;
+}
+
+
+
+/*====================================================================
+slick
+====================================================================*/
+.sliderArea {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 250px 25px;
+}
+
+.sliderArea.w300 {
+    max-width: 300px;
+}
+  .slick-slide {
+    margin: 0 5px;
+}
+  .slick-slide img {
+    width: 740px;
+    height: 460px;
+}
+  .slick-prev, .slick-next {
+    z-index: 1;
+}
+  .slick-prev:before, .slick-next:before {
+    color: #000;
+}
+  .slick-slide {
+    transition: all ease-in-out .3s;
+    opacity: 0;
+}
+  .slick-active {
+    opacity: 1;
+}
+  .slick-current {
+    opacity: 1;
+}
+  .thumb {
+    margin: 20px 0 0;
+}
+  .thumb .slick-slide {
+    cursor: pointer;
+}
+  .thumb .slick-slide:hover {
+    opacity: .7;
+}
