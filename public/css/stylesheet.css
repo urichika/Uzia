@@ -245,7 +245,16 @@ footer{
 .btn1:hover {
     opacity: 0.8;
 }
-
+.sns_wrap{
+    background-color: #00331a;
+}
+.fb-page{
+    background-color: white;
+}
+.insta-page{
+    background-color: aliceblue;
+    display: inline-block;
+}
 
 
 /*--------------------------------------------------------------------------------------------------------------
