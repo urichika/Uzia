@@ -235,7 +235,8 @@ footer{
     text-decoration: underline;
 }
 .btn1 {
-    background-color: #2ab68c;
+    background-color: white;
+    /*background-color: #2ab68c;*/
     display: inline-block;
     opacity: 1;
     border-radius: 4px;
