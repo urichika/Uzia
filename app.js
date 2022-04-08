@@ -135,4 +135,12 @@ app.get('/access', (req, res) => {
     res.render('access.ejs');
 });
 
+app.get('/login', (req, res) => {
+    res.render('login.ejs');
+});
+
+app.post('/login', (req, res) => {
+    res.render('login.ejs');
+});
+
 app.listen(process.env.PORT || 5000)
